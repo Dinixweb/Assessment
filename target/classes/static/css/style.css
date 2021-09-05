@@ -34,3 +34,13 @@ small{
 .clear{
 padding:5px;
 }
+.error404{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+.error404 h1{
+color:#ccc;
+font-size:200px;
+}

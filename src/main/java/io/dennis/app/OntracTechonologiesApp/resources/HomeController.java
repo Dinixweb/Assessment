@@ -57,5 +57,8 @@ public class HomeController {
         return "redirect:/?successful";
     }
 
-
+/*     @RequestMapping("/error")
+    public String handleError() {
+        return "error";
+    }*/
 }
