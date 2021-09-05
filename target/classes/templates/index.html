@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" th:href="@{bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <title>Ontrac Technologies Registration App</title>
+</head>
+<body>
+
+<div class="container-sm container-extra">
+    <div th:if="${param.successful}">
+        <div class="alert alert-info">Your registration was successful :)</div>
+    </div>
+    <form method="post" th:action="@{/newAccount}" th:object="${User}">
+
+        <div class="title"><h1>Registration Form</h1></div>
+        <div class="row mb-3">
+            <label class="form-label" for="formGroupExampleInput">Full Name</label>
+            <input class="form-control" id="formGroupExampleInput" placeholder="please enter your full name"
+                   required th:field="*{fullName}" type="text">
+        </div>
+        <div class="row mb-3">
+            <label class="form-label" for="formGroupExampleInput2">Phone Number</label>
+            <input class="form-control" id="formGroupExampleInput2" placeholder="0810000000"
+                   th:field="*{phone}" type="number">
+            <div class="clear"></div>
+            <small  th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">invalid entry</small>
+        </div>
+        <div class="row mb-3" th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
+            <label class="form-label" for="formGroupExampleInput2">Email Address</label>
+            <input class="form-control" id="formGroupExampleInput3" placeholder="dennis.shaba@gmail.com"
+                   th:field="*{email}" type="email">
+            <div class="clear"></div>
+            <small  th:if="${#fields.hasErrors('email')}" th:errors="*{email}">invalid entry</small>
+        </div>
+        <button class="btn btn-primary btn-extra" type="submit">Register</button>
+    </form>
+</div>
+
+<!--Pop Modal Start-->
+
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="myModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+                <button class="btn btn-primary" type="button">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal end-->
+<script th:src="@{/bootstrap/js/jquery-3.3.1.min.js/}" type="text/javascript"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}" type="text/javascript"></script>
+<script th:src="@{/js/main.js}" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+/*Author: Dennis Shaba */
+/********Style for home and registration form*/
+
+body{
+background-color:#E7F3FF;
+}
+.container-extra{
+background-color:#035CAF;
+padding:30px 100px;
+color:#fff;
+width:550px;
+}
+.title{
+    display:flex;
+    justify-content:center;
+    color:#fff;
+    margin:50px 0;
+    font-weight:bolder;
+    border:2px solid #fff;
+}
+.btn-extra{
+    border:2px solid yellow;
+}
+.btn-extra:hover{
+ border:2px solid #fff;
+}
+small{
+    color:#fff !important;
+    padding:7px;
+    background:#EF005E;
+    margin-top:5px;
+    border-radius:5px;
+}
+.clear{
+padding:5px;
+}
